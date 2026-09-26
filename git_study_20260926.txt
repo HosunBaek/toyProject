@@ -1,0 +1,24 @@
+깃 스터디
+
+PART1 
+깃 - 버전관리 시스템
+깃허브 - 버전을 보관하는곳
+
+1.깃에는 파일을 하나만 넣거나 모두 넣어야함
+2. Staging area에 넣음
+3. Staging area 를 통재로 복사해서 버전으로 추가
+
+working directory - staging area - repository
+
+!!!!!!시작!!!!!!!
+git config --global user.name "Your Name"
+git config --global user.email "Your Email"
+git config --global init.defaultBranch main
+
+`--global` 옵션은 Git 설정을 현재 사용자 계정 전반에 적용하여, 해당 사용자의 어떤 저장소에서든 기본값으로 사용되게 합니다.
+
+
+0) 폴더생성
+1) git init 
+2) git add 파일명
+3) git commit
