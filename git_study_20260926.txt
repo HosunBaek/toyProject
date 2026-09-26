@@ -21,4 +21,51 @@ git config --global init.defaultBranch main
 0) 폴더생성
 1) git init 
 2) git add 파일명
+  > git add 파일명
+  > git add .   (전체 다 올리는거)
+ 
 3) git commit
+  > git commit -m "커밋로그"
+4) git log - 로그보기
+
+====================================
+현재 워킹디렉토리와, 스테이지 에어리어가 무슨 버전인지
+표기로 남겨둬야함
+> HEAD : 헤드가 이 커밋을 가르키고 있다.
+
+git checkout "commitid" or get checkout "상대위치"
+> HEAD가 해당 버전으로 바뀜 
+> HEAD를 바꾸면 Staging area와 working directory 도 바뀜
+> HEAD~1, HEAD~2,......  
+
+부모커밋
+====================================
+git status
+> tracked 상태와 staging area간의 차이점
+> staging과 repository간의 차이점
+> untracked 상태에 있는 파일
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
