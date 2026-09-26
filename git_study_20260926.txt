@@ -49,9 +49,14 @@ git status
 ====================================
 git diff
 > tracked와 staging area간의 차이점을 보여줌
-> git diff [커밋ID]   // working directory와 커밋상태와의 차이
-> git diff --cashed  // staging area와 repository와 차이점
+> git diff 커밋ID or git diff head   
+   // working directory와 커밋상태와의 차이
+> git diff --cached  // staging area와 repository와 차이점
+> git diff 커밋id1 커밋id2
+  ex) git diff head~1 head
 
+====================================
+브랜치
 
 
 
