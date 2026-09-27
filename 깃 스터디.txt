@@ -1,0 +1,145 @@
+깃 스터디
+
+PART1 
+깃 - 버전관리 시스템
+깃허브 - 버전을 보관하는곳
+
+1.깃에는 파일을 하나만 넣거나 모두 넣어야함
+2. Staging area에 넣음
+3. Staging area 를 통재로 복사해서 버전으로 추가
+
+working directory - staging area - repository
+
+!!!!!!시작!!!!!!!
+git config --global user.name "Your Name"
+git config --global user.email "Your Email"
+git config --global init.defaultBranch main
+
+`--global` 옵션은 Git 설정을 현재 사용자 계정 전반에 적용하여, 해당 사용자의 어떤 저장소에서든 기본값으로 사용되게 합니다.
+
+
+0) 폴더생성
+1) git init 
+2) git add 파일명
+  > git add 파일명
+  > git add .   (전체 다 올리는거)
+ 
+3) git commit
+  > git commit -m "커밋로그"
+  > git commit -am "커밋로그"
+4) git log - 로그보기
+  > git log --graph --all
+
+====================================
+현재 워킹디렉토리와, 스테이지 에어리어가 무슨 버전인지
+표기로 남겨둬야함
+> HEAD : 헤드가 이 커밋을 가르키고 있다.
+
+git checkout "commitid" or get checkout "상대위치"
+> HEAD가 해당 버전으로 바뀜 
+> HEAD를 바꾸면 Staging area와 working directory 도 바뀜
+> HEAD~1, HEAD~2,......  
+
+부모커밋
+====================================
+git status
+수정상태 대상 구하기
+> tracked 상태와 staging area간의 차이점
+> staging과 repository간의 차이점
+> untracked 상태에 있는 파일
+
+====================================
+git diff
+> tracked와 staging area간의 차이점을 보여줌
+> git diff 커밋ID or git diff head   
+   // working directory와 커밋상태와의 차이
+> git diff --cached  // staging area와 repository와 차이점
+> git diff 커밋id1 커밋id2
+  ex) git diff head~1 head
+
+====================================
+브랜치
+
+git branch : 브랜치 목록보여주기
+> git branch test  (test이름으로 브랜치생성)
+git checkout 브랜치명
+git switch 브랜치명
+
+git switch -c new-branch   // 만들고, 그쪽으로 이동해라
+
+
+====================================
+머지
+1)3WAY -MERGE
+-BASE 이후로 TEST, MAIN브런치 모두 커밋이있음
+-git merge 브랜치명
+1) 베이스와 test커밋 최신것의 diff를 구해서 
+2) main의 working directory와 staging area에 올림
+3) 이상없으면 commit
+
+Conflict
+-unmerged path -충돌나서 commit을 할 수 없는 상태
+
+2)fast-forward merge
+- 그림참고 
+
+
+체리픽 - 특정 커밋 하나만 메인브런치로 가져옴
+cherry-pick
+>git cherry-pick 아이디
+체리픽시 충돌
+1) git add "수정이 완료된 파일"
+2) git cherry-pick --continue     : 체리픽 후 커밋
+   git  cherry-pick --abort          : 체리픽 취소
+
+====================================
+git rebase 브랜치
+head -> test
+1) git checkout test
+2) git rebase main
+
+3) git checkout main
+4) git merge test
+
+
+rebase 
+충돌이 해제되면 파일 수정하고
+git add 파일
+git rebase --continue
+
+====================================
+이전상태로 되돌리기
+reset, checkout 
+
+1) git reset --hard 아이디
+2) checkout은 커밋이 삭제되지는 않음, 대신 브랜치에서 이탈함
+
+    
+
+
+# 1. 지금 그 상태 그대로 새로운 브랜치를 만들어 이름을 붙입니다.
+git checkout -b my-new-feature
+
+# 2. 이제 이 새 브랜치에 어제 만든 수정사항이 안전하게 보존됩니다. 
+# 다시 원래 자리(main)로 가고 싶다면:
+git checkout main
+
+ revert - 전단계로 돌아가는 커밋을 하나 더 찍어버림
+> git revert id
+> git diff 부모커밋 커밋을 역순으로 함  
+ 
+충돌 
+> git revert --continue
+
+
+fast-forward merge , 3way-merge -> reset --hard id 로 머지 취소 
+
+
+====================================
+
+
+
+
+
+
+
